@@ -1,0 +1,24 @@
+<div class="layui-side layui-side-menu">
+    <div class="layui-side-scroll">
+        <div class="layui-logo" lay-href="{:url('index/console')}">
+            <span>后台管理</span>
+        </div>
+
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+
+            <li data-name="home" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="主页" lay-direction="2">
+                    <i class="layui-icon layui-icon-home"></i>
+                    <cite>主页</cite>
+                </a>
+            </li>
+
+            <li data-name="template" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="数据管理" lay-href="{:url('data/index')}" lay-direction="2">
+                    <i class="layui-icon layui-icon-template"></i>
+                    <cite>数据管理</cite>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

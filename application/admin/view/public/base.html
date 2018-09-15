@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{block name="title"}落地页信息管理系统{/block}</title>
+    {include file="public:head" /}
+</head>
+<body class="layui-layout-body">
+
+<div id="LAY_app">
+    <div class="layui-layout layui-layout-admin">
+        {include file="public:top,public:menu,public:tag" /}
+
+        <!-- 主体内容 -->
+        <div class="layui-body" id="LAY_app_body">
+            <div class="layadmin-tabsbody-item layui-show">
+                <iframe src="{:url('index/console')}" frameborder="0" class="layadmin-iframe"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.config({
+        base: '/public/static/admin/'
+    }).extend({
+        index: './lib/index'
+    }).use('index');
+</script>
+</body>
+</html>

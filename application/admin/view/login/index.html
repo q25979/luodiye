@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台系统登录</title>
+
+	{include file="public:head" /}
+	{load href="/public/static/plug-in/jigsaw/jigsaw.css" /}
+	{load href="/public/static/plug-in/jigsaw/jigsaw.js" /}
+	<style>
+		.login-container { padding: 50px 0; box-sizing: border-box; }
+		.login-container>div { margin: 0 auto; box-sizing: border-box; width: 375px; }
+		.login-container .login-header { text-align: center; padding: 20px; color: #000; }
+		.login-container .login-main { padding: 20px; }
+		.login-container .layui-form-item { position: relative; }
+		.login-container .login-icon { position: absolute; left: 1px; top: 1px; width: 38px; line-height: 36px; text-align: center; color: #d2d2d2; }
+		.login-container .layui-input { padding-left: 38px; }
+		.login-container .login-footer { text-align: center; }
+		
+		/*#code canvas:nth-child(1) { width: 100% !important; }*/
+		.sliderContainer { width: 100%; }
+		/*#code canvas:nth-child(3) { height: 166px !important; }*/
+	</style>
+</head>
+<body>
+	<div class="login-container">
+		<div class="login-header">
+			<h2>后台系统登录</h2>
+		</div>
+		<div class="login-main layui-form">
+			<div class="layui-form-item">
+				<label class="login-icon layui-icon layui-icon-username"></label>	
+				<input name="username" lay-verify="required" placeholder="用户名" class="layui-input" type="text">
+			</div>
+			<div class="layui-form-item">
+				<label class="login-icon layui-icon layui-icon-password"></label>	
+				<input name="password" lay-verify="required" placeholder="用户密码" class="layui-input" type="password">
+			</div>
+			<div class="layui-form-item">
+				<div id="code" width="375"></div>
+			</div>
+			<div class="layui-form-item">
+				<button class="layui-btn layui-btn-fluid layui-btn-disabled" lay-submit lay-filter="login-btn" disabled>登 入</button>
+			</div>
+		</div>
+
+		<div class="login-footer">
+			<p>版权所有 © 2018 </p>
+		</div>
+	</div>
+
+	<script>
+		jigsaw.init(document.getElementById('code'), function() {
+			$('[lay-filter=login-btn]').removeClass('layui-btn-disabled')
+			$('[lay-filter=login-btn]').attr('disabled', false)
+		})
+
+		layui.use('form', function() {
+			var form = layui.form
+
+			// 事件监听
+			form.on('submit(login-btn)', function(data) {
+				var d = data.field 
+
+				layer.load(2)
+				$.post('{:url("index")}', d, function(res) {
+					layer.closeAll()
+					if (res.code == 0) {
+						layer.msg('登录成功，正在跳转...', { icon: 6, time: 1500 }, function() {
+							window.location.href = '{:url("/admin")}'
+						})
+						return true
+					}
+
+					layer.msg(res.msg, { icon: 5, time: 1500 }, function() {
+						window.location.reload()
+					})
+				})
+			})
+		})
+	</script>
+</body>
+</html>

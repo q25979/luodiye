@@ -1,0 +1,254 @@
+﻿body,html {
+    margin:0;
+    padding:0;
+}
+body{
+    font-family:'Microsoft YaHei';
+}
+.min-width{
+    min-width:1135px;
+}
+.banner{
+    width:100%;
+    height:824px;
+}
+.ba {
+    height: 206px;
+    width: 100%;
+    margin:0 auto;
+}
+.banner1 {
+    background: url(../img/banner_01.jpg) no-repeat center;
+}
+.banner2 {
+    background: url(../img/banner_02.jpg) no-repeat center;
+}
+.banner3 {
+    background: url(../img/banner_03.jpg) no-repeat center;
+}
+.banner4 {
+    background: url(../img/banner_04.jpg) no-repeat center;
+}
+.cont{
+    width:100%;
+    text-align:center;
+    margin:28.5px auto;
+
+}
+    .cont h1 {
+        display:inline-block;
+        font-size: 72px;
+        color: #ab7c1c;
+        margin-bottom:0;
+    }
+    .cont h2 {
+        font-size:30px;
+        letter-spacing: 0.2em;
+        color: #ab7c1c;
+        font-weight:100;
+    }
+.title_span {
+    width: 96px;
+    height: 48px;
+    display: inline-block;
+}
+.title_left {
+    background: url(../img/title_left.png) no-repeat center;
+}
+.title_right {
+    background: url(../img/tltle_right.png) no-repeat center;
+}
+.cont .box{
+    width:860px;
+    height:220px;
+    margin:0 auto;
+}
+    .cont .box:hover {
+        background: #fef9eb;
+    }
+.cont .box img{
+    width:163px;
+    height:163px;
+    display:inline-block;
+    margin:28.5px;
+
+}
+.box .right_box {
+    float: right;
+    width: 611.5px;
+    height: 220px;
+    text-align: left;
+    color: #ab7c1c;
+    padding-right: 28.5px;
+}
+.right_box h3{
+    font-size:24px;
+}
+.right_box p button{
+    border: none;
+    background: red;
+    color: white;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+.cont_2 {
+    background: #fef9eb url("https://www.transparenttextures.com/patterns/arches.png");
+}
+.box_2 {
+    width: 1136px;
+    text-align: center;
+    display: inline-block;
+    padding-bottom: 28.5px;
+}
+.min_box {
+    width: 284px;
+    height: 506px;
+    padding: 28.5px;
+    float: left;
+    display: inline-block;
+    border-left: 1px dashed #c1b9a1;
+    border-right: 1px dashed #c1b9a1;
+    border-top: 1px solid #fef9eb;
+    border-bottom: 1px solid #fef9eb;
+    box-sizing: border-box; /*解决padding溢出*/
+    color: #ab7c1c;
+}
+    .min_box:hover {
+        background: #f8edd7;
+        border-top: 1px solid #f1daaa;
+        border-bottom: 1px solid #f1daaa;
+    }
+    .min_box h3{
+        font-size:24px;
+        font-weight:700;
+        margin:0;
+    }
+    .min_box p {
+        font-size: 15px;
+        text-align:left;
+    }
+.br {
+    border-left: 1px dashed #fef9eb;
+}
+.box_3{
+    width: 860px;
+    height: 360px;
+    margin: 35px auto;
+    text-align: center;
+}
+.min_box_3{
+    float: left;
+    width: 215px;
+    height: 360px;
+    padding: 28.5px;
+    box-sizing: border-box; /*解决padding溢出*/
+    color: #ab7c1c;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.min_box_3:hover{
+    background: #fef9eb;
+    border: 1px solid #f8edd7;
+}
+.min_box_3 h3{
+    color: #745618;
+    font-size: 24px;
+    font-weight: 100;
+}
+.min_box_3 p{
+    text-align: left;
+    font-size: 15px;
+}
+#wx_pic{
+    width: 250px;
+    height: 250px;
+    display:inline-block;
+    margin: 0 auto;
+}
+#wx_btn{
+    width: 500px;
+    height: 2em;
+    margin: 1em auto;
+    display: block;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    background: #b73333;
+    padding: 0.3em;
+    border-radius: 50px;
+    line-height: 1.2em;
+}
+#wx_btn:hover{
+    background: #d44040;
+}
+.inp{
+    opacity: 0;
+    display: block;
+    width: 1px;
+    height: 1px;
+    margin: 0 auto;
+}
+.footer{
+    width: 100%;
+    height: 160px;
+    text-align: center;
+    color: #fff;
+    display: block;
+    margin-top: 6em;
+    background: url("https://www.transparenttextures.com/patterns/arches.png") #b73333;
+}
+copy{
+    margin-top:28.5px;
+    display: inline-block;
+    font-size: 14px;
+}
+.copy_img{
+    text-align: center;
+    padding: 2px;
+    width: 640px;
+    margin: 14px auto;
+    height: 45px;
+ 
+}
+
+.flot{
+    background: url(../img/wx.png) no-repeat center;
+    width: 259px;
+    height: 352px;
+    position: fixed;
+    top:25%;
+}
+.flot_right{
+    right:0;
+}
+.flot_left{
+    left:0;
+}
+.flot img{
+    position: absolute;
+    top: 127px;
+    left: 85px;
+    width: 90px!important;
+    height: 90px!important;
+}
+.flot p{
+    margin-top: 325px;
+    text-align: center;
+
+}
+.flot p button{
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 14px;
+    width: 10em;
+    height: 1em;
+}
+
+.copy_img img{
+    border-radius: 5px;
+    width: 100px;
+    margin: 3px;
+}

@@ -1,0 +1,185 @@
+﻿
+@charset "UTF-8";
+
+/**/
+
+/*假设设计稿是750px*/
+/*750:font-size:100px*/
+/*主流的设备屏幕比320还小的时候,就是默认的html值*/
+
+
+html {
+    font-size: 42.66666667px;
+}
+
+@media (min-width:320px) {
+    html {
+        font-size: 42.66666667px;
+    }
+}
+
+@media  (min-width: 360px) {
+    html {
+        font-size: 48px;
+    }
+}
+
+@media  (min-width: 375px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+
+@media (min-width: 384px) {
+    html {
+        font-size: 51.2px;
+    }
+}
+
+@media (min-width: 393px) {
+    html {
+        font-size: 52.4px;
+    }
+}
+
+@media (min-width: 400px) {
+    html {
+        font-size: 53.33333333px;
+    }
+}
+
+@media (min-width: 412px) {
+    html {
+        font-size: 54.93333333px;
+    }
+}
+
+@media (min-width: 414px) {
+    html {
+        font-size: 55.2px;
+    }
+}
+
+@media (min-width: 424px) {
+    html {
+        font-size: 56.53333333px;
+    }
+}
+
+@media  (min-width: 480px) {
+    html {
+        font-size: 64px;
+    }
+}
+
+@media (min-width: 540px) {
+    html {
+        font-size: 72px;
+    }
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: 80px;
+    }
+}
+
+@media  (min-width: 640px) {
+    html {
+        font-size: 85.33333px;
+    }
+}
+
+@media  (min-width: 720px) {
+    html {
+        font-size: 96px;
+    }
+}
+
+@media (min-width: 750px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media  (min-width: 768px) {
+    html {
+        font-size: 102.4px;
+    }
+}
+
+@media  (min-width: 1440px) {
+    html {
+        font-size: 192px;
+    }
+}
+
+/*初始化*/
+/*初始化*/
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+input {
+    border: none;
+    -webkit-appearance: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+/*定义公共类*/
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    _height: 1%;
+}

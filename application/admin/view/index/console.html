@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>控制台</title>
+
+	{include file="public:head" /}
+
+	{load href="/public/static/plug-in/chart/highcharts.js" /}
+	{load href="/public/static/plug-in/chart/exporting.js" /}
+	{load href="/public/static/js/vue.min.js" /}
+	
+	<style>
+		.layuiadmin-big-font { font-size: 2em; padding: 10px 0; }
+		.layui-card-header .layuiadmin-badge { position: absolute; top: 11px; right: 15px; }
+		.layui-card-body { padding: 0 15px 10px; }
+
+		/*// 进度条*/
+		.progress-bar { height: 100%; border-radius: 20px; color: white; text-align: right; }
+		.progress-bar>span { margin-right: 8px; }
+	</style>
+</head>
+<body>
+	<div class="layui-fluid"  id="controls">
+		<div class="layui-row layui-col-space15">
+			<!-- 服务器信息 -->
+			<div class="layui-col-sm12">
+				<div class="layui-card">
+					<div class="layui-card-header">服务器信息</div>
+					<div class="layui-card-body">
+						<div class="layui-row">
+							<table class="layui-table">
+								<tr>
+									<td>你的IP地址</td>
+									<td>{$S['YourIP']}</td>
+								</tr>
+								<tr>
+									<td>服务器IP地址</td>
+									<td>{$S['DomainIP']}</td>
+								</tr>
+								<tr>
+									<td>服务器信息</td>
+									<td>{$S['Flag']}</td>
+								</tr>
+								<tr>
+									<td>服务器OS</td>
+									<td>{$S['OS']}</td>
+								</tr>
+								<tr>
+									<td>服务器语言</td>
+									<td>{$S['Language']}</td>
+								</tr>
+								<tr>
+									<td>主机名</td>
+									<td>{$S['Name']}</td>
+								</tr>
+								<tr>
+									<td>WEB引擎</td>
+									<td>{$S['WebEngine']}</td>
+								</tr>
+								<tr>
+									<td>WEB端口</td>
+									<td>{$S['WebPort']}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 服务器信息 -->
+			<div class="layui-col-sm12">
+				<div class="layui-card">
+					<div class="layui-card-header">服务器实时信息</div>
+					<div class="layui-card-body">
+						<div class="layui-row">
+							<table class="layui-table">
+								<tr>
+									<td>服务器时间</td>
+									<td>{{c.S.sTime}}</td>
+								</tr>
+								<tr>
+									<td>CPU使用情况</td>
+									<td>{{c.CPU_Use}}</td>
+								</tr>
+								<tr>
+									<td>磁盘使用情况</td>
+									<td id="disk">
+										<p>总空间{{c.hd.t}}GB, 空闲{{c.hd.f}}GB, 已用{{c.hd.t}}GB, 使用率{{c.hd.PCT}}%</p>
+										<div class="layui-progress layui-progress-big" lay-showPercent="yes">
+  											<div class="progress-bar"><span>{{c.hd.PCT}}%</span></div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- js -->
+	<script>
+		var controls = new Vue({
+			el: '#controls',
+			data: {
+				c: {
+					S:{},
+					sysInfo: {
+						cpu: {},
+					},
+					hd: {},
+					NetWork: {}
+				}
+			},
+			created: function() {
+				var _this = this
+
+				layui.use('element')
+				this.getRealTime()
+
+				_this.getRealTime()
+			},
+			methods: {
+				getRealTime: function() {
+					var u = '{:url("index/getRealTime")}',
+						_this = this
+
+					$.get(u, function(res) {
+						Vue.set(controls, 'c', res)
+
+						// 设置进度条
+						var pct = parseFloat(res.hd.PCT)
+						var element = $('.layui-progress>.progress-bar')
+						var progress_bg = 'red'
+						if (pct < 20) {
+							progress_bg = '#1E9FFF'
+						} else if (pct >= 20 && pct < 60) {
+							progress_bg = '#5FB878'
+						} else if (pct >= 60 && pct < 80) {
+							progress_bg = '#FF5722'
+						}
+
+						element.css({ width: pct + '%', background: progress_bg })
+					})
+				}
+			}
+		})
+	</script>
+</body>
+</html>

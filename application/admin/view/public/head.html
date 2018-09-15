@@ -1,0 +1,39 @@
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<!-- 加载css -->
+
+{load href="/public/static/plug-in/layui/css/layui.css" /}
+{load href="/public/static/admin/css/admin.css" /}
+
+<!-- 加载js -->
+{load href="/public/static/plug-in/layui/layui.js" /}
+{load href="/public/static/js/jquery-3.3.1.min.js" /}
+
+<style>
+	/* 弹出层往上移动 */
+	/*.layui-layer-dialog { top: 180px !important; } */
+</style>
+
+<!-- 公共函数 -->
+<script>
+	var lu = {
+		// 更新缓存
+		clearCache: function(name) {
+			layer.load(2)
+			$.get('{:url("index/clearCache")}', { name: name }, function(res) {
+				layer.closeAll()
+				if (res) {
+					layer.msg('缓存更新成功', {icon: 6, time: 1500})
+					return false
+				}
+
+				layer.msg('缓存更新失败', {icon: 5, time: 1500})
+			})
+		}
+	}
+</script>
+
+
+
