@@ -14,8 +14,6 @@ Route::get('think', function () {
 });
 
 // 路由定义
-// 404 路由设置, /404
-// Route::rule('404', 'index/index/_404');
 
 return [
 ];

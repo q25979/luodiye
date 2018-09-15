@@ -1,0 +1,15 @@
+域名管理：http://www.my8w.com/index.asp
+  账号：wolunyun.com
+  密码：gx360360
+
+落地页：
+  服务器：103.60.166.36:58888
+  账号：Administrator
+  密码：WSLqwc448
+
+前缀：
+  hugsel 
+  butths
+  newf
+  plan
+  make

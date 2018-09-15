@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="css/m.css">
     <!-- <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/base.css"> -->
-    <script src="index_files/s.js"></script>
-
     <script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
-
+    <script src="index_files/s.js"></script>
 
     <script>
         var oWidth = document.documentElement.clientWidth || document.body.clientWidth;
@@ -46,142 +44,9 @@
             }
         }, false);
     </script>
-
-
-
-    <!-- <script type="text/javascript">
-        function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + d.toGMTString();
-            document.cookie = cname + "=" + cvalue + "; " + expires;
-        }
-
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i].trim();
-                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-            }
-            return "";
-        }
-        if (getCookie('stxlwx_c') == '') {
-            setCookie('stxlwx_c', stxlwx, '365');
-            setCookie('wx_ewm_c', wx_ewm, '365');
-        } else {
-            var stxlwx = getCookie('stxlwx_c');
-            var wx_ewm = getCookie('wx_ewm_c');
-        }
-    </script> -->
-
-
-
-
-<!--     
-
-<link rel="stylesheet" href="css/sy.css">
-<style>
-    .cover .packet {
-        width: 60%;
-        height: 50%;
-        top: 50%;
-        left: 50%;
-        margin-left: -30%;
-        margin-top: -50%;
-        background-position: 50% 0;
-        background-size: 100%;
-    }
-
-    .cover .cancel {
-        width: 10%;
-        height: 10%;
-        right: -12%;
-        background-position: 50% 0;
-        background-size: 100%;
-    }
-
-    .cover .packet .open {
-        width: 30%;
-        height: 30%;
-        top: 70%;
-        left: 50%;
-        margin-left: -16%;
-        background-position: 50% 0;
-        background-size: 100%;
-    }
-
-    .cover .packet_2 {
-        width: 60%;
-        height: 60%;
-        top: 50%;
-        left: 50%;
-        margin-left: -30%;
-        margin-top: -50%;
-        background-position: 50% 0;
-        background-size: 100%;
-    }
-
-    .cover .packet_2 img {
-        display: block;
-        width: 50%;
-        height: 27%;
-        margin: 83% auto;
-    }
-</style>
-<div class="cover">
-    <div class="packet">
-        <a href="javascript:void(0);" class="open" target="_self"></a>
-        <div class="cancel"></div>
-    </div>
-    <a href="weixin://">
-        <div class="packet_2">
-            <script type="text/javascript">
-                document.write(wx_ewm);
-            </script>
-            <div class="cancel cancel2"></div>
-        </div>
-    </a>
-</div>
-<script type="text/javascript" src="js/jquery-1.js"></script>
-<script type="text/javascript" src="js/demo.js"></script>
-<script type="text/javascript">
-    $(".con02RRB").luntopFn({
-        time: 15
-    })
-    $(".con06CLB").luntopFn({
-        time: 15
-    })
-</script>
-<script>
-    var cancel = document.querySelectorAll('.cancel');
-    console.log(cancel);
-    var cover = document.querySelector('.cover');
-    var open = document.querySelector('.open');
-    var packet = document.querySelector('.packet');
-    var packet2 = document.querySelector('.packet_2');
-    console.log(packet);
-    open.onclick = function () {
-        packet.style.display = 'none';
-        packet2.style.display = 'block';
-    };
-    for (var i = 0; i < cancel.length; i++) {
-        cancel[i].onclick = function () {
-            cover.style.display = 'none';
-        }
-    }
-</script>
- -->
-
-
-
-
-
-
 </head>
 
 <body>
-
     <div class="banner">
         <img src="img/banner_m.jpg" alt="">
     </div>
@@ -202,7 +67,10 @@
                         document.write(stxlwx);
                     </script>
                 </button>
-
+                
+                <style>
+                    .box_left img { width: 150px; height: 150px; }
+                </style>
                 <script type="text/javascript">
                     document.write(wx_ewm);
                 </script>
