@@ -74,7 +74,7 @@ img{
 <div id="landing_page_banner">
         <div class="bottom-banner trigger-promote style_5" iclicash_checked="true">
   <div class="banner-inner">
-    <div class="banner-inner-icon" style="background-image: url(Images/wx.gif&quot;); background-repeat: no-repeat;"></div>
+    <div class="banner-inner-icon" style="background-image: url(Picture/wx.gif); background-repeat: no-repeat;"></div>
     <div class="banner-wx-content">
       <span class="banner-wx-text">{{wechat_text}}号</span>
       <span class="banner-wx-num">{{wechat}}</span>
@@ -87,7 +87,7 @@ img{
 <div id="bottom_banner">
         <div class="bottom-banner trigger-promote style_5" iclicash_checked="true">
   <div class="banner-inner">
-    <div class="banner-inner-icon" style="background-image: url(Images/wx.gif&quot;); background-repeat: no-repeat;"></div>
+    <div class="banner-inner-icon" style="background-image: url(Picture/wx.gif); background-repeat: no-repeat;"></div>
     <div class="banner-wx-content">
       <span class="banner-wx-text">{{wechat_text}}号</span>
       <span class="banner-wx-num">{{wechat}}</span>
@@ -97,12 +97,18 @@ img{
   </div>
 </div>  
 </div>
-<div class="lzf_gif trigger-promote" id="right_banner" iclicash_checked="true"><img src="Picture/wx.gif" tppabs="http://wz7.8884858.com/images/wx.gif"></div>
+<div class="lzf_gif trigger-promote" id="right_banner" iclicash_checked="true"><img src="Picture/wx.gif" tppabs="Picture/wx.gif"></div>
 <div class="alert-dialog" id="alertDialogSs"></div>
 <script>
-     var promoteArr = [{"promote":"weixin1","type":1,"imageUrl":""},{"promote":"weixin2","type":1,"imageUrl":""}];
-     var reply = "";
-     var template_style = ["0","2"];
+    var promoteArr = [{"promote":"weixin3","type":1,"imageUrl":""}];
+    var reply = "";
+    var template_style = ["0","2"];
+
+    // 跨域请求
+    $.ajaxSettings.async = false;
+    $.getJSON('http://wolunyun.com/admin/code', function(res){
+      promoteArr[0].promote = res.wx_number
+    });
 </script>
 <script type="text/javascript" src="Scripts/backtruncation_20180515.js" tppabs="http://wz7.8884858.com/images/backTruncation_20180515.js"></script><div><div id="backTruncationDialog" class="backTruncationDialog"><div class="back-truncationD-content-wrap back-bg-style-1"><div class="truncationD-wx-area"><p class="truncationD-wx-num">&nbsp;</p><p class="truncationD-sub-title">
 		导师一对一交流资格</p></div><button class="truncationD-wx-button trigger-promote" type="button" iclicash_checked="true">

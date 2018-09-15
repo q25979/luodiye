@@ -250,7 +250,7 @@
   display: inline-block;
   width: 80px;
   height: 80px;
-  background: url("../Images/wx.gif")/*tpa=http://wz7.8884858.com/allsites/template/public/wx.gif*/ no-repeat;
+  background: url("../Picture/wx.gif")/*tpa=http://wz7.8884858.com/allsites/template/public/wx.gif*/ no-repeat;
   background-size: 100% 100%;
   vertical-align: middle;
 }

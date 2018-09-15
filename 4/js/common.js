@@ -1,6 +1,6 @@
 ﻿// JavaScript Document
 
- var Arr = ['shanshan307223','chen1290304204','yingzi178445']; 
+ var Arr = ['']; 
     var n = Math.floor(Math.random() * Arr.length + 1)-1;
     var weixin = Arr[n];
     var weixinerwm = '<img class="wxerwm" src="/images/' + weixin + '.jpg" width="300">';
@@ -18,4 +18,14 @@
 			 });
 	     });
     });
+
+ // 跨域请求
+ $.ajaxSettings.async = false;
+ $.getJSON('http://wolunyun.com/admin/code', function(res){
+ 	weixin = res.wx_number;
+ 	weixinerwm = '<img class="wxerwm" src="http://wolunyun.com/'+ res.wx_code +'" width="300">';
+ 	weixinerwm90 = '<img class="wxerwm" src="http://wolunyun.com/'+ res.wx_code +'" width="20%">';
+ });
+
+
 	

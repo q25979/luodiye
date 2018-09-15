@@ -55,8 +55,8 @@ commonObject.prototype = {
             var wxid = query.promote;
             var imageUrl = query.imageUrl;
             var wx_text = '微信';
-            var wx_logo = '<img src="images/wx.gif"/*tpa=http://wz7.8884858.com/images/images/wx.gif*/>';
-            var wx_logo_src = 'images/wx.gif'/*tpa=http://wz7.8884858.com/images/images/wx.gif*/;
+            var wx_logo = '<img src="Picture/wx.gif"/*tpa=http://wz7.8884858.com/images/images/wx.gif*/>';
+            var wx_logo_src = 'Picture/wx.gif'/*tpa=http://wz7.8884858.com/images/images/wx.gif*/;
             var wx_url = 'weixin://';
         }else if(query.type == 0){
             var wxid = query.promote;
@@ -335,7 +335,7 @@ commonObject.prototype = {
                     if(event.data.promote_type == 'QQ'){
                         sjWeiXin.getElementsByTagName('img')[0].src = "images/qq.png"/*tpa=http://wz7.8884858.com/images/images/qq.png*/;
                     }else if(event.data.promote_type == '微信'){
-                        sjWeiXin.getElementsByTagName('img')[0].src = "images/wx.gif"/*tpa=http://wz7.8884858.com/images/images/wx.gif*/;
+                        sjWeiXin.getElementsByTagName('img')[0].src = "Picture/wx.gif"/*tpa=http://wz7.8884858.com/images/images/wx.gif*/;
                     }
                 };
                 var landingPageIcon = document.getElementsByClassName('landing-page-icon');
