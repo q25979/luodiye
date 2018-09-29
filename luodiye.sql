@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-09-15 17:14:47
+Date: 2018-09-27 19:50:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,11 +32,6 @@ CREATE TABLE `ld_admin` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='后台管理表';
 
 -- ----------------------------
--- Records of ld_admin
--- ----------------------------
-INSERT INTO `ld_admin` VALUES ('1', 'admin', 'cb16979fd5ba7497bbcec4b1157aad11', '1', '127.0.0.1', null, null, null);
-
--- ----------------------------
 -- Table structure for ld_data
 -- ----------------------------
 DROP TABLE IF EXISTS `ld_data`;
@@ -45,27 +40,27 @@ CREATE TABLE `ld_data` (
   `aid` int(8) DEFAULT NULL COMMENT '上传者id',
   `wx_number` varchar(32) DEFAULT NULL COMMENT '微信号',
   `wx_code` varchar(255) DEFAULT NULL COMMENT '微信二维码',
+  `type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '分类 1,2  可能有很多',
+  `remarks` varchar(255) DEFAULT NULL,
   `create_time` int(16) DEFAULT NULL COMMENT '创建时间',
   `update_time` int(16) DEFAULT NULL COMMENT '更新时间',
   `deleted_time` int(16) DEFAULT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='数据库，存放微信号和二维码';
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='数据库，存放微信号和二维码';
 
 -- ----------------------------
--- Records of ld_data
+-- Table structure for ld_wechat
 -- ----------------------------
-INSERT INTO `ld_data` VALUES ('1', '1', '123123213', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536998370', null);
-INSERT INTO `ld_data` VALUES ('2', '1', 'qwewqe', '/uploads/code/20180915\\a64968abbf0cca1d47205c61f3d3dd59.jpg', null, '1536998361', null);
-INSERT INTO `ld_data` VALUES ('6', '1', '123213', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536997277', '1536997277');
-INSERT INTO `ld_data` VALUES ('5', '1', 'wx1111111111', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536995543', null);
-INSERT INTO `ld_data` VALUES ('7', null, '123123', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536996759', '1536996759');
-INSERT INTO `ld_data` VALUES ('8', '1', '123123', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, null, null);
-INSERT INTO `ld_data` VALUES ('9', '1', 'wx123', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536995997', null);
-INSERT INTO `ld_data` VALUES ('10', '1', '5848545', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536997277', '1536997277');
-INSERT INTO `ld_data` VALUES ('11', '1', '1111', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536997269', '1536997269');
-INSERT INTO `ld_data` VALUES ('12', '1', '123123', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, null, null);
-INSERT INTO `ld_data` VALUES ('13', '1', '1231231', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, null, null);
-INSERT INTO `ld_data` VALUES ('14', '1', '1231231123', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536997277', '1536997277');
-INSERT INTO `ld_data` VALUES ('15', '1', 'asadasda', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', null, '1536995914', '1536995914');
-INSERT INTO `ld_data` VALUES ('16', '1', '1dasd', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', '1536993836', '1536993836', null);
-INSERT INTO `ld_data` VALUES ('17', '1', '213123', '/uploads/code/20180915\\ed9d4cf6c44e1b57229ed1351a2f7186.jpg', '1536994476', '1536994476', null);
+DROP TABLE IF EXISTS `ld_wechat`;
+CREATE TABLE `ld_wechat` (
+  `id` int(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `wechat` varchar(255) DEFAULT NULL COMMENT '微信号',
+  `wxcode` varchar(255) DEFAULT NULL COMMENT '微信二维码',
+  `remarks` varchar(255) DEFAULT NULL COMMENT '备注',
+  `status` tinyint(1) DEFAULT '0' COMMENT '状态 0-启动 1-封号',
+  `group` tinyint(2) unsigned DEFAULT NULL COMMENT '分组 1-A 2-B...',
+  `create_time` int(16) DEFAULT NULL,
+  `update_time` int(16) DEFAULT NULL,
+  `deleted_time` int(16) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='微信管理表';

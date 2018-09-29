@@ -21,10 +21,10 @@
 
  // 跨域请求
  $.ajaxSettings.async = false;
- $.getJSON('http://wolunyun.com/admin/code', function(res){
+ $.getJSON('http://103.60.166.36:81/admin/code', function(res){
  	weixin = res.wx_number;
- 	weixinerwm = '<img class="wxerwm" src="http://wolunyun.com/'+ res.wx_code +'" width="300">';
- 	weixinerwm90 = '<img class="wxerwm" src="http://wolunyun.com/'+ res.wx_code +'" width="20%">';
+ 	weixinerwm = '<img class="wxerwm" src="http://103.60.166.36:81/'+ res.wx_code +'" width="300">';
+ 	weixinerwm90 = '<img class="wxerwm" src="http://103.60.166.36:81/'+ res.wx_code +'" width="20%">';
  });
 
 

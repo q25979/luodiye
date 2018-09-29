@@ -1,0 +1,133 @@
+{include file="public:head" /}
+
+<style>
+	.btn-container { margin-bottom: 10px; }
+	.layui-table-cell .layui-form-checkbox[lay-skin=primary], .layui-table-cell .layui-form-radio[lay-skin=primary] { margin-top: 5px; }
+</style>
+
+<div class="layui-fluid">
+	<div class="layui-card">
+		<div class="layui-card-header">数据管理</div>
+		<div class="layui-card-body">
+			<div class="btn-container">
+				<button class="layui-btn" onclick="pop()">添加数据</button>
+				<button class="layui-btn layui-btn-danger" id="moreDel">批量删除</button>
+			</div>
+			<table id="table" lay-filter="table" lay-data="{id: 'table'}"></table>
+		</div>
+	</div>
+</div>
+
+<script>
+	layui.use(['table', 'form'], function() {
+		var table = layui.table;
+		var form  = layui.form;
+
+		table.render({
+			elem: "#table",
+			url: "{:url('index')}",
+			page: true,
+			limit: 20,
+			done: function(res) {
+			},
+			cols: [[
+				{type: 'checkbox', fixed: 'left'},
+				{field: 'wechat', title: '微信号', width: 140, align: 'center'},
+				{toolbar: '#code', title: '微信二维码', width: 110, align: 'center'},
+				{field: 'group_name', title: '分组', width: 80, align: 'center', sort: 'true'},
+				{field: 'status', title: '微信状态', templet: '#status', width: 100, align: 'center'},
+				{field: 'remarks', title: '备注', width: 280, align: 'center'},
+				{title: '操作', width: 120, align: 'center', templet: '#operation', fixed: 'right'}
+			]]
+		});
+
+		// 监听工具栏
+		table.on('tool(table)', function(o) {
+			var d   = o.data,
+				lEv = o.event,
+				tr  = o.tr
+
+			if (lEv == 'detail') pop(d);
+			if (lEv == 'deleted') deleted(d.id);
+			if (lEv == 'see') see(d);
+		})
+
+		// 批量删除
+		$('#moreDel').click(function() {
+			var checklist = table.checkStatus('table')
+
+			var id = ''
+			for (var i=0; i<checklist.data.length; i++) {
+				id += checklist.data[i].id
+				id += i == checklist.data.length-1 ? '' : ','
+			}
+
+			deleted(id);
+		})
+	});
+
+	// 弹出层
+	var pop = function(data) {
+		var title = data == null ? '微信添加' : '微信编辑',
+			url = 'add?id='
+			param = data == null ? '' : data.id
+
+		layer.open({
+			type: 2,
+			title: title,
+			offset: '100px',
+			content: url + param,
+			area: ['600px', '500px'],
+			maxmin: true
+		})
+	}
+
+	// 删除
+	var deleted = function(id) {
+		layer.confirm('确认删除该数据?', function() {
+			layer.closeAll()
+			layer.load(2)
+			$.post("{:url('delete')}", {'id' : id}, function(res) {
+				layer.closeAll()
+				if(res.code == 0){
+                    layer.msg(res.msg, {icon: 6, time: 1200}, function() {
+                    	window.location.reload()
+                    });
+                } else{
+                    layer.msg(res.msg, {icon: 5, time: 1500});
+                }
+			})
+		});
+	}
+
+	// 查看二维码
+	var see = function(data) {
+		var option = {
+			title: '二维码',
+			id: data.id,
+			data: [{
+				'alt': '二维码',
+				'pid': data.id,
+				'src': data.wxcode,
+				'thumb': ''
+			}]
+		}
+
+		layer.photos({
+			photos: option
+		})
+	}
+</script>
+
+<script type="text/html" id="operation">
+	<a class="layui-btn layui-btn-xs" lay-event="detail">编辑</a>
+	<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="deleted">删除</a>
+</script>
+
+<script type="text/html" id="code">
+	<a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="see">查看</a>
+</script>
+
+<script type="text/html" id="status">
+	<input type="checkbox" name="status" value="{{d.status}}" lay-filter="statusListen" lay-skin="switch" lay-text="正常|封号" {{ d.status == 0 ? 'checked' : '' }} disabled>
+</script>

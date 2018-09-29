@@ -8,6 +8,7 @@
 
 namespace app\admin\controller;
 use think\Controller;
+use think\facade\Request;
 
 class Code extends Controller
 {
@@ -16,8 +17,9 @@ class Code extends Controller
     public function index()
     {
     	header('Access-Control-Allow-Origin: *');
+        $type = Request::get('type');
         $list = \app\common\model\Data::field('wx_number, wx_code')
-            ->cache('data')
+            ->where('type='.$type)
             ->all();
 
         $idx = rand(0, count($list)-1);

@@ -11,8 +11,8 @@
 		<div class="layui-card-body">
 			<div class="btn-container">
 				<button class="layui-btn" onclick="pop()">添加数据</button>
-				<button class="layui-btn layui-btn-normal" onclick="lu.clearCache('data')">更新缓存</button>
 				<button class="layui-btn layui-btn-danger" id="moreDel">批量删除</button>
+				<button class="layui-btn layui-btn-normal" id="moreEditRemarks">批量更改备注</button>
 			</div>
 			<table id="table" lay-filter="table" lay-data="{id: 'table'}"></table>
 		</div>
@@ -27,6 +27,7 @@
 			elem: "#table",
 			url: "{:url('index')}",
 			page: true,
+			limit: 20,
 			done: function(res) {
 			},
 			cols: [[
@@ -34,6 +35,8 @@
 				{field: 'id', title: 'ID', width: 70, fixed: 'left', align: 'center'},
 				{field: 'wx_number', title: '微信号', width: 140, align: 'center'},
 				{toolbar: '#code', title: '微信二维码', width: 110, align: 'center'},
+				{field: 'type', title: '分类', width: 80, align: 'center', sort: 'true'},
+				{field: 'remarks', title: '备注', width: 280, align: 'center'},
 				{field: 'create_time', title: '创建时间', width: 180, align: 'center'},
 				{field: 'update_time', title: '更新时间', width: 180, align: 'center'},
 				{title: '操作', width: 120, align: 'center', templet: '#operation', fixed: 'right'}
@@ -53,16 +56,54 @@
 
 		// 批量删除
 		$('#moreDel').click(function() {
-			var checklist = table.checkStatus('table')
+			deleted(getId())
+		})
 
+		// 批量更改备注
+		$('#moreEditRemarks').click(function() {
+			var h  = '<div class="layui-form-item" style="padding: 20px 20px 0 0">'
+				h += '<label class="layui-form-label">备注</label>'
+				h += '<div class="layui-input-block">'
+				h += '<input type="text" name="remarks" lay-verify="required" placeholder="请输入备注" class="layui-input" />'
+				h += '</div></div>'
+
+			if (getId() == '') {
+				layer.msg('您未选择任何项')
+				return ;
+			}
+
+			layer.open({
+				type: 1,
+				content: h,
+				btn: ["确认"],
+				yes: function() {
+					layer.closeAll()
+					layer.load(2)
+					$.post('{:url("editMore")}', {id: getId(), remarks: $('[name=remarks]').val()}, function(res) {
+						layer.closeAll()
+						console.log(res)
+						if (res.code == 0) {
+							layer.msg('修改成功,刷新更新数据', {time: 1200, icon: 6})
+							return ;
+						}
+
+						layer.msg('修改失败', {time: 1500, icon: 5})
+					})
+				}
+			})
+		})
+
+		// 获取批量id
+		var getId = function() {
+			var checklist = table.checkStatus('table')
 			var id = ''
 			for (var i=0; i<checklist.data.length; i++) {
 				id += checklist.data[i].id
 				id += i == checklist.data.length-1 ? '' : ','
 			}
 
-			deleted(id);
-		})
+			return id
+		}
 	});
 
 	// 弹出层
@@ -75,7 +116,8 @@
 			type: 2,
 			title: title,
 			content: url + param,
-			area: ['600px', '400px'],
+			offset: '100px',
+			area: ['600px', '500px'],
 			maxmin: true
 		})
 	}

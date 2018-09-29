@@ -1,0 +1,455 @@
+.bottom {
+  font-size: 14px;
+  margin-top: 110px;
+  text-align: center;
+  padding-bottom: 150px;
+  color: #898989
+}
+
+.bottom span {
+  color: #607fa6;
+  font-size: 2.4rem
+}
+
+.lzf_gif {
+  position: fixed;
+  right: 0;
+  top: 33%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.lzf_gif img {
+  width: 70px;
+}
+
+#bottom_banner {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+#top_banner {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.alert-dialog {
+  width: 60%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.foot {
+  overflow: hidden;
+  width: 100%;
+  background-color: rgb(255, 102, 0);
+  padding: 5px 0 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+.foot img {
+  float: left;
+  margin-top: -5px;
+  width: 70px;
+}
+
+.foot p {
+  font-size: 13px;
+  position: relative;
+  color: #fff;
+  padding-top: 8px;
+  line-height: 20px
+}
+
+.foot b {
+  color: rgb(255, 244, 92);
+  font-size: 18px
+}
+
+.insert-form-content {
+  padding: 15px;
+}
+
+.insert-form-content>.insert-form-list {
+  font-size: 0;
+  padding: 10px 0;
+}
+
+.insert-form-content>.insert-form-list>.insert-form-title {
+  width: 30%;
+  display: inline-block;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.insert-form-content>.insert-form-list>.insert-form-item {
+  display: inline-block;
+  width: 60%;
+}
+
+.insert-form-content>.insert-form-list>.insert-form-item>input {
+  width: 100%;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 5px;
+  border: none;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.insert-form-content>.insert-form-list:last-child {
+  text-align: center;
+}
+
+.insert-form-content>.insert-form-list>button {
+  width: auto;
+  height: auto;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  background: #387ef5;
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 8px 20px !important;
+}
+
+.insert-form-content>.insert-form-list>button:first-child {
+  margin: 0 !important;
+}
+
+.sj_weixin img.fixedRight {
+  width: 70px;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.sj_weixin p.hide {
+  display: none;
+}
+
+#landing_page_banner {
+  display: none;
+}
+
+.yellow .landing-page-number {
+  width: auto;
+}
+
+.style_1 .banner-inner {
+  background: #c18fff;
+}
+
+.style_1 .banner-wx-num {
+  background: #7af4ff;
+}
+
+.style_1 .banner-button {
+  background: #427cff;
+}
+
+.style_2 .banner-inner {
+  background: #3797ff;
+}
+
+.style_2 .banner-wx-num {
+  background: #ffd823;
+}
+
+.style_2 .banner-button {
+  background: #ffc342;
+}
+
+.style_3 .banner-inner {
+  background: #0554f8;
+}
+
+.style_3 .banner-wx-num {
+  background: #0554f8;
+}
+
+.style_3 .banner-button {
+  background: #f5fb05;
+  color: #ff2142;
+}
+
+.style_4 .banner-inner {
+  background: #ffe25a;
+}
+
+.style_4 .banner-wx-num {
+  background: #62da4a;
+}
+
+.style_4 .banner-button {
+  background: #ff6eec;
+}
+
+.style_5 .banner-inner {
+  background: #ff9a22;
+}
+
+.style_5 .banner-wx-num {
+  background: #ff9a22;
+}
+
+.style_5 .banner-button {
+  background: #f55326;
+}
+
+.style_6 .banner-inner {
+  background: #ff584b;
+}
+
+.style_6 .banner-wx-num {
+  background: #fff55a;
+}
+
+.style_6 .banner-button {
+  background: #ffa841;
+}
+
+.banner-inner {
+  padding: 0 10px;
+  color: #fff;
+  font-size: 0;
+}
+
+.banner-inner-icon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: url(./wx.gif) no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+
+.banner-wx-content {
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+}
+
+.banner-wx-text {
+  font-size: 18px;
+}
+
+.banner-wx-num {
+  font-size: 18px;
+  display: inline-block;
+  padding: 0 3px;
+  margin-left: 7px;
+  border-radius: 6px;
+}
+
+.banner-button {
+  display: inline-block;
+  width: calc(50% - 80px);
+  font-size: 18px;
+  text-align: center;
+  line-height: 32px;
+  vertical-align: middle;
+  border-radius: 15px;
+  animation: big 1.4s ease infinite alternate;
+  -webkit-animation: big 1.4s ease infinite alternate;
+  -moz-animation: big 1.4s ease infinite alternate;
+  -ms-animation: big 1.4s ease infinite alternate;
+  -o-animation: big 1.4s ease infinite alternate;
+}
+
+@keyframes big {
+  0% {
+    transform: scale(1)
+  }
+  18% {
+    transform: scale(1.1)
+  }
+  32% {
+    transform: scale(1)
+  }
+  48% {
+    transform: scale(1.1)
+  }
+  64% {
+    transform: scale(1)
+  }
+  80% {
+    transform: scale(1.1)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes big {
+  0% {
+    -webkit-transform: scale(1)
+  }
+  18% {
+    -webkit-transform: scale(1.1)
+  }
+  32% {
+    -webkit-transform: scale(1)
+  }
+  48% {
+    -webkit-transform: scale(1.1)
+  }
+  64% {
+    -webkit-transform: scale(1)
+  }
+  80% {
+    -webkit-transform: scale(1.1)
+  }
+  100% {
+    -webkit-transform: scale(1)
+  }
+}
+
+
+/*返回键截持样式*/
+.backTruncationDialog {
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     z-index: 9999;
+     width: 100%;
+     height: 100%;
+     background: rgba(0,0,0,0.5);
+     display: none;
+}
+.back-truncationD-content-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -170px 0 0 -140px;
+    width: 280px;
+    height: 340px;
+    background: #fff;
+    border-radius: 10px;
+    background: url('http://cdn.aiclicash.com//allsites/uploads/content/theme/fatTemplate/c9d6f2ffc1960b49c6f0cf42fa9cb88e_1511972.png') no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}
+.back-bg-style-1{
+    background: url('/allsites/template/public/catagory_1.png') no-repeat;
+    background-size: 100% 100%;
+}
+.back-bg-style-2{
+    background: url('/allsites/template/public/catagory_2.png') no-repeat;
+    background-size: 100% 100%;
+}
+.back-bg-style-3{
+    background: url('/allsites/template/public/catagory_3.png') no-repeat;
+    background-size: 100% 100%;
+}
+.back-bg-style-4{
+    background: url('/allsites/template/public/catagory_4.png') no-repeat;
+    background-size: 100% 100%;
+}
+.back-bg-style-5{
+    background: url('/allsites/template/public/catagory_5.png') no-repeat;
+    background-size: 100% 100%;
+}
+.back-bg-style-1 .truncationD-wx-button{
+    background: #fcd853;
+    color: #b14e00;
+    margin-top: 25px;
+}
+.back-bg-style-2 .truncationD-wx-area{
+    margin-top: 140px;
+}
+.back-bg-style-2 .truncationD-wx-button{
+    background: #fcd550;
+    color: #b14e00;
+    margin-top: 35px;
+}
+.back-bg-style-3 .truncationD-wx-button{
+    background: #39a2ff;
+    color: #fff;
+    margin-top: 40px;
+}
+.back-bg-style-4 .truncationD-wx-button{
+    background: #60cdfc;
+    color: #fff;
+    margin-top: 40px;
+}
+.back-bg-style-4 .truncationD-footer-text{
+    color: #79d3fe
+}
+.back-bg-style-5 .truncationD-wx-button{
+    background: #fdd34d;
+    color: #fff;
+    margin-top: 40px;
+}
+.truncationD-wx-area {
+    margin-top: 120px;
+    text-align: center;
+    color: #fff;
+}
+.truncationD-sub-title {
+    margin-top:20px;
+}
+.truncationD-wx-num {
+        font-size: 24px;
+    font-weight: 600;
+}
+.truncationD-wx-button {
+    border: none;
+    outline: 0;
+    width: 247px;
+    height: 44px;
+    color: #B14E00;
+    border-radius: 25px;
+    font-size: 16px;
+     background: #fcd853;
+    color: #b14e00;
+    margin-top: 35px;
+}
+.truncationD-footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 18px;
+}
+.truncationD-closeBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url(http://cdn.aiclicash.com//allsites/uploads/content/theme/fatTemplate/26941b2bbd3c36e95e1d867389f7d0f4_1511972.png) no-repeat;
+    bottom: -60px;
+    left: 125px;
+    background-size: 100%;
+}

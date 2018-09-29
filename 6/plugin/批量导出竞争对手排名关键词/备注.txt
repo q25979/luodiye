@@ -1,0 +1,17 @@
+软件环境支持：python 
+python安装教程：http://shenzhen.seosrx.net/tool/2.html
+
+
+批量导出竞争对手排名关键词：
+运行结果为
+关键词	排名	总指数	PC指数	移动指数	关键词收录量
+1.把所需要查询的网址的url放入，url.txt 里面。双击：批量导出竞争对手排名关键词.py。结果会导出一个my_web.csv文档
+
+
+使用注意：
+1.运行批量导出竞争对手排名关键词.py后自动会关闭。
+1.【注意原先生成的my_web.csv文档结果下次会追加在里面。导出请先删除my_web.csv文档。】
+2.程序脚本是请求爱站的外链查询（http://link.aizhan.com/）一天不能请求过多次。 软件无结果，或者报错就是这个原因。
+
+转摘请注明软件出处：http://shenzhen.seosrx.net 【深圳seo星辰_seo三人行深圳站】
+在此感谢seo三人行-论坛ID:ashin4015提供此脚本程序。

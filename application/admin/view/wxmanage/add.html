@@ -1,0 +1,124 @@
+{include file="public:head" /}
+
+<style>
+	.btn-container { margin-bottom: 10px; }
+</style>
+
+<div class="layui-fluid">
+	<div class="layui-card">
+		<div class="layui-card-header">{$title}</div>
+		<div class="layui-card-body">
+			<form class="layui-form" lay-filter="form">
+				<div class="layui-form-item">
+					<label class="layui-form-label">微信号</label>
+					<div class="layui-input-block">
+						<input type="text" name="wechat" lay-verify="required" required placeholder="请输入微信号" class="layui-input" value="{$info['wechat']}">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">分组</label>
+					<div class="layui-input-block">
+						<select name="group">
+							<option value="1">A</option>
+							<option value="2">B</option>
+							<option value="3">C</option>
+							<option value="4">G</option>
+							<option value="5">I</option>
+							<option value="6">J</option>
+							<option value="7">K</option>
+							<option value="8">M</option>
+							<option value="9">O</option>
+							<option value="10">P</option>
+						</select>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">状态</label>
+					<div class="layui-input-block">
+						<input type="checkbox" name="status" lay-skin="switch" lay-text="正常|封号" checked="">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">备注</label>
+					<div class="layui-input-block">
+						<input type="text" name="remarks" placeholder="请输入备注" class="layui-input" value="{$info['remarks']}">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">微信二维码</label>
+					<div class="layui-input-block">
+						<input type="text" name="wxcode" lay-verify="required" required placeholder="请输入微信二维码链接地址或直接上传二维码" class="layui-input" value="{$info['wxcode']}">
+						<div id="uploadCode" class="layui-btn" style="margin-top: 5px">上传二维码</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<div class="layui-btn" lay-submit lay-filter="submit">立即提交</div>
+						<button class="layui-btn layui-btn-primary" type="reset">重置</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	layui.use(['form', 'upload'], function() {
+		var form = layui.form,
+			upload = layui.upload
+
+		// 表单初始化
+		var status = '{$info["status"]}' == 0 ? 'on' : ''
+		form.val('form', {
+			'status': status,
+			'group': '{$info["group"]}'
+		})
+
+		// 数据提交
+		form.on('submit(submit)', function(data) {
+			var d = data.field,
+				u = '{:url("add")}'
+				d.status = data.field.status == 'on' ? 0 : 1
+
+			'{$id}' != '' ? d.id = '{$id}' : ''
+			layer.load(2)
+			$.post(u, d, function(res) {
+				console.log(res)
+				layer.closeAll('loading')
+				if (res.code == 0) {
+					layer.confirm(res.msg + '是否继续提交？', {icon: 6}, function() {
+						layer.closeAll()
+						window.location.reload()
+					}, function() {
+						window.parent.location.reload()
+					})
+				} else {
+					layer.msg(res.msg, {icon: 5, time: 1500})
+				}
+			})
+		})
+
+		// 二维码上传
+		upload.render({
+			elem: '#uploadCode',
+			url: '{:url("upload/index")}',
+			data: { type: 'code' },
+			before: function() {
+				layer.load(2)
+			},
+			done: function(res) {
+				layer.closeAll()
+				if (res.code == 0) {
+					layer.msg('上传成功', {icon: 6, time: 1500})
+					$('[name=wxcode]').val(res.path)
+					return ;
+				}
+
+				layer.msg('上传失败', {icon: 5, time: 1800})
+			},
+			error: function() {
+				layer.closeAll()
+			}
+		})
+	})
+</script>

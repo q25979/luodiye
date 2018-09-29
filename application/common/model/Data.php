@@ -20,7 +20,7 @@ class Data extends Model
     static public function idGet($id)
     {
         return self::where('id', $id)
-            ->field('id, wx_code, wx_number')
+            ->field('id, wx_code, wx_number, type, remarks')
             ->find();
     }
 }
