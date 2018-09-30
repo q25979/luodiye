@@ -7,6 +7,6 @@ var ___bucket___ = "cngg4";
 
 // 跨域请求
 $.ajaxSettings.async = false;
-$.getJSON('http://103.60.166.36:81/admin/code', function(res){
+$.getJSON('http://103.60.166.36:81/admin/code', {type: 2}, function(res){
 	_json_ = ["", res.wx_number, ""]
 });

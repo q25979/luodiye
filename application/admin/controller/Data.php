@@ -14,7 +14,7 @@ class Data extends Validate
             $get = Request::get();
 
             $list = \app\common\model\Data::page($get['page'], $get['limit'])
-                ->field('deleted_time', true)
+                ->field('deleted_time, create_time', true)
                 ->order('type', 'desc')
                 ->select();
 

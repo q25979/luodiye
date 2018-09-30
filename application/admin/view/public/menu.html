@@ -19,12 +19,34 @@
                     <cite>数据管理</cite>
                 </a>
             </li>
+
+            <li data-name="wechat" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="链接配置" lay-href="{:url('urlconfig/index')}" lay-direction="2">
+                    <i class="layui-icon layui-icon-link"></i>
+                    <cite>链接配置</cite>
+                </a>
+            </li>
             
             <li data-name="wechat" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="微信管理" lay-href="{:url('wxmanage/index')}" lay-direction="2">
                     <i class="layui-icon layui-icon-login-wechat"></i>
                     <cite>微信管理</cite>
                 </a>
+            </li>
+
+            <li data-name="senior" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="模板设置" lay-direction="2">
+                    <i class="layui-icon layui-icon-template-1"></i>
+                    <cite>模板设置</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{:url('template/wxtemp')}">微信模板</a>
+                    </dd>
+                    <dd>
+                        <a lay-href="{:url('template/ymtemp')}">页面模板</a>
+                    </dd>
+                </dl>
             </li>
         </ul>
     </div>
