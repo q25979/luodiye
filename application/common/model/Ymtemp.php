@@ -11,8 +11,15 @@ namespace app\common\model;
 use think\Model;
 use think\model\concern\SoftDelete;
 
-class UrlConfigure extends Model
+class Ymtemp extends Model
 {
     use SoftDelete;
     protected $deleteTime = 'deleted_time';
+
+    static public function idGet($id)
+    {
+        return self::where('id', $id)
+            ->field('name, abspath')
+            ->find();
+    }
 }

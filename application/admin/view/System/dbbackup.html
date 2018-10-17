@@ -1,0 +1,32 @@
+{include file="public:head" /}
+
+<style>
+	.shellui { height: 400px; width: 100%; background: #111; margin: 10px 0 5px 0; border-radius: 2px; }
+	.shellui>p { margin: 0 10px; }
+	.shellui>iframe { width: 100%; height: 100%; border: 0; }
+</style>
+<div class="layui-fluid">
+	<div class="layui-card">
+		<div class="layui-card-header">数据库备份</div>
+		<div class="layui-card-body">
+			<div class="btn-container">
+				<button class="layui-btn layui-btn-normal" onclick="backup()">一键备份</button>
+			</div>
+			<div class="shellui">
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	layui.use('layer');
+	var backup = function() {
+		layer.confirm("确认备份数据库?", {offset: '100px'}, function() {
+			layer.closeAll();
+			if ($('.shellui>iframe').length > 0) { 
+				$('#backup-iframe').attr('src', $('#backup-iframe').attr('src'))
+				return 0
+			}
+			$('.shellui').append('<iframe id="backup-iframe" src="/admin/System/dbbackups"></iframe>')
+		});
+	}
+</script>

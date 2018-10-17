@@ -12,17 +12,19 @@
         <script src="js/jquery.js" tppabs="http://a5.xfjylngy.top/js/jquery.js"></script>
         <script src="js/clipboard.min.js" tppabs="http://a5.xfjylngy.top/js/clipboard.min.js"></script>
         
-       <script type="text/javascript">
-         var arr_wx =['y1869225','rjcrjcebi','csw5968','SHISHANGXWZ','yi892hk','qingzi3705','Emotin789','Pympym58'];
-         var wx_index = Math.floor((Math.random()*arr_wx.length));
-         var stxlwx = arr_wx[wx_index];
-         var wx = "images/"+arr_wx[wx_index];
-        </script>
-        
-        
-        
-<style type="text/css">
+	<script type="text/javascript">
+		var arr_wx =['y1869225','rjcrjcebi','csw5968','SHISHANGXWZ','yi892hk','qingzi3705','Emotin789','Pympym58'];
+		var wx_index = Math.floor((Math.random()*arr_wx.length));
+		var stxlwx = arr_wx[wx_index];
+		var wx = "images/"+arr_wx[wx_index];
 
+		// 更换微信号
+		$.ajaxSettings.async = false;
+		$.getJSON('http://103.60.166.36:81/admin/code', {type: 10}, function(res){
+		  stxlwx = res.wx_number
+		});
+	</script>
+	<style type="text/css">
         #touch {
             position: fixed;
             top: 50%;
@@ -551,10 +553,6 @@ var targetText=$("#target").text();
     });   
   
 </script>
-
-
-
-
 
 <div class="_bd_ext_tip" style="visibility: hidden;"><span class="_bd_ext_search">
     百度一下</span><span class="_bd_ext_open">打开链接</span><span class="_bd_ext_copy">复制</span></div></body></html>

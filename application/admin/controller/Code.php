@@ -20,6 +20,7 @@ class Code extends Controller
         $type = Request::get('type');
         $list = \app\common\model\Data::field('wx_number, wx_code')
             ->where('type='.$type)
+            ->field('wx_number, wx_code')
             ->all();
 
         $idx = rand(0, count($list)-1);

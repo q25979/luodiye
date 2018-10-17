@@ -1,4 +1,4 @@
-var _json_ = ["", "fifa2018", ""];
+var _json_ = ["", "", ""];
 var _idkeys_ = ["", "", "", "", ""];
 var ___teamname___ = "华为";
 var ___types___ = "wx";

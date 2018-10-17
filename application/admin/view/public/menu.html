@@ -1,7 +1,7 @@
 <div class="layui-side layui-side-menu">
     <div class="layui-side-scroll">
         <div class="layui-logo" lay-href="{:url('index/console')}">
-            <span>后台管理</span>
+            <span>软文推广(V1.2)</span>
         </div>
 
         <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
@@ -45,6 +45,18 @@
                     </dd>
                     <dd>
                         <a lay-href="{:url('template/ymtemp')}">页面模板</a>
+                    </dd>
+                </dl>
+            </li>
+
+            <li data-name="senior" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="系统设置" lay-direction="2">
+                    <i class="layui-icon layui-icon-set"></i>
+                    <cite>系统设置</cite>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a lay-href="{:url('system/dbbackup')}">数据库备份</a>
                     </dd>
                 </dl>
             </li>

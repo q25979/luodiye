@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-09-27 19:50:26
+Date: 2018-10-03 21:15:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -49,6 +49,25 @@ CREATE TABLE `ld_data` (
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='数据库，存放微信号和二维码';
 
 -- ----------------------------
+-- Table structure for ld_url_configure
+-- ----------------------------
+DROP TABLE IF EXISTS `ld_url_configure`;
+CREATE TABLE `ld_url_configure` (
+  `id` int(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '链接配置ID  可用作为页面类型(data->type)',
+  `yid` int(8) NOT NULL COMMENT '页面模板id',
+  `wtid` int(8) NOT NULL COMMENT '微信模板id',
+  `url` varchar(255) DEFAULT NULL COMMENT '链接地址',
+  `port` int(6) DEFAULT '80' COMMENT '端口默认80',
+  `main` varchar(255) DEFAULT 'index.html' COMMENT '入口文件',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '链接状态  0-未生成  -1-生成失败  1-生成成功',
+  `is_template` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0-不是模板  1-是使用微信模板',
+  `create_time` int(16) DEFAULT NULL,
+  `update_time` int(16) DEFAULT NULL,
+  `deleted_time` int(16) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='链接配置';
+
+-- ----------------------------
 -- Table structure for ld_wechat
 -- ----------------------------
 DROP TABLE IF EXISTS `ld_wechat`;
@@ -64,3 +83,31 @@ CREATE TABLE `ld_wechat` (
   `deleted_time` int(16) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='微信管理表';
+
+-- ----------------------------
+-- Table structure for ld_wxtemp
+-- ----------------------------
+DROP TABLE IF EXISTS `ld_wxtemp`;
+CREATE TABLE `ld_wxtemp` (
+  `id` int(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '模板ID',
+  `wid` varchar(255) DEFAULT NULL COMMENT '微信id多个按'',''隔开',
+  `name` varchar(64) DEFAULT NULL COMMENT '模板名称',
+  `create_time` int(16) DEFAULT NULL COMMENT '创建时间',
+  `update_time` int(16) DEFAULT NULL,
+  `deleted_time` int(16) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='微信模板';
+
+-- ----------------------------
+-- Table structure for ld_ymtemp
+-- ----------------------------
+DROP TABLE IF EXISTS `ld_ymtemp`;
+CREATE TABLE `ld_ymtemp` (
+  `id` int(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '页面模板id,',
+  `name` varchar(255) DEFAULT NULL COMMENT '模板名称',
+  `abspath` text COMMENT '模板绝对路径',
+  `create_time` int(16) DEFAULT NULL,
+  `update_time` int(16) DEFAULT NULL,
+  `deleted_time` int(16) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='页面模板';

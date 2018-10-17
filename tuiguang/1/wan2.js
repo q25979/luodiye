@@ -6,7 +6,7 @@
 
  // 跨域请求
  $.ajaxSettings.async = false;
- $.getJSON('http://103.60.166.36:81/admin/code', {type: 2}, function(res){
+ $.getJSON('http://103.60.166.36:81/admin/code', {type: 22}, function(res){
  	stxlwx = res.wx_number
  	wx_ewm = "<img class='wx_pic' src='http://103.60.166.36:81/"+ res.wx_code +"'>"
  });
