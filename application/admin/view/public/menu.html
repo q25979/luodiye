@@ -21,10 +21,14 @@
             </li>
 
             <li data-name="wechat" class="layui-nav-item">
-                <a href="javascript:;" lay-tips="链接配置" lay-href="{:url('urlconfig/index')}" lay-direction="2">
+                <a href="javascript:;" onclick="layer.tips('尚未开放', this);">
+                    <i class="layui-icon layui-icon-link"></i>
+                    链接配置
+                </a>
+                <!-- <a href="javascript:;" lay-tips="链接配置" lay-href="{:url('urlconfig/index')}" lay-direction="2">
                     <i class="layui-icon layui-icon-link"></i>
                     <cite>链接配置</cite>
-                </a>
+                </a> -->
             </li>
             
             <li data-name="wechat" class="layui-nav-item">
@@ -41,10 +45,11 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a lay-href="{:url('template/wxtemp')}">微信模板</a>
+                        <!-- <a lay-href="{:url('template/wxtemp')}">微信模板</a> -->
+                        <a href="javascript:;" onclick="layer.tips('尚未开放', this);">微信模板</a>
                     </dd>
                     <dd>
-                        <a lay-href="{:url('template/ymtemp')}">页面模板</a>
+                        <a href="javascript:;" onclick="layer.tips('尚未开放', this);">页面模板</a>
                     </dd>
                 </dl>
             </li>
@@ -57,6 +62,9 @@
                 <dl class="layui-nav-child">
                     <dd>
                         <a lay-href="{:url('system/dbbackup')}">数据库备份</a>
+                    </dd>
+                    <dd>
+                        <a lay-href="{:url('system/conf')}">配置文件</a>
                     </dd>
                 </dl>
             </li>

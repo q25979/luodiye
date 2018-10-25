@@ -1,0 +1,43 @@
+{include file="public:head" /}
+
+<style>
+	.conf-edit {margin-top:10px;height:600px;resize:none;background-color:#000;color:#0bff50;}
+</style>
+<div class="layui-fluid">
+	<div class="layui-card">
+		<div class="layui-card-header">Nginx配置文件</div>
+		<div class="layui-card-body">
+			<div class="btn-container">
+				<button class="layui-btn layui-btn-normal" onclick="save()">保存配置文件</button>
+				<button class="layui-btn layui-btn-normal" onclick="reboot()">重启服务</button>
+			</div>
+			<textarea id="conf" class="conf-edit layui-textarea">{$confinfo}</textarea>
+		</div>
+	</div>
+</div>
+<script>
+	layui.use('layer');
+	// 保存配置文件
+	var save = function() {
+		var u = '{:url("save")}';
+
+		layer.load(2)
+		$.post(u, {data: $('#conf').val()}, function(res) {
+			layer.closeAll(0)
+			if (res.code == 0) {
+				layer.msg(res.msg, {icon: 6, time: 1500})
+				return true;
+			}
+			layer.msg(res.msg, {icon: 5, time: 1200})
+		})
+	}
+
+	// 重启服务
+	var reboot = function() {
+		layer.load(2)
+		$.get('{:url("reload")}', function(res) {
+			layer.closeAll(0)
+			layer.msg(res.msg, {icon: 6, time: 1500})
+		})
+	}
+</script>

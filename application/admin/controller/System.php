@@ -7,6 +7,9 @@ use think\Db;
 
 class System extends Validate
 {
+    // 配置文件路径
+    private $confpath = 'D:\phpStudy\nginx\conf\vhosts.conf';
+
 	// 数据库备份
     public function dbbackup()
     {
@@ -14,7 +17,8 @@ class System extends Validate
     }
 
     // 数据库备份
-    public function dbbackups() {
+    public function dbbackups() 
+    {
         // 设置颜色
         echo "<style>body{color:#32CD32;}</style>";
         $dbname = \Config::get()['database']['database'];
@@ -65,5 +69,52 @@ class System extends Validate
         echo "==> 数据库备份成功。。。<br />";
         echo "==> 数据库总大小为：".round($byte/1024, 2)." kb<br />";
         echo "==> 数据库文件路径为: $filename<br />";
+    }
+
+    // 配置文件
+    public function conf()
+    {
+        // 文件路劲
+        $open = fopen($this->confpath, 'r+') or die("配置文件打开失败!");
+        $i = 0;
+        $confinfo = '';
+        while(!feof($open)) {
+            $confinfo .= fgets($open);
+        }
+        fclose($open);
+        
+        $this->assign('confinfo', $confinfo);
+        return $this->fetch();
+    }
+
+    // 保存配置文件
+    public function save()
+    {
+        // 接收文件
+        $data = Request::post('data');
+        $save = fopen($this->confpath, 'w+');
+        if (!$save) {
+            return json([
+                'code'  => -1,
+                'msg'   => '文件打开失败'
+            ]);
+        }
+
+        fwrite($save, $data);
+        fclose($save);
+        return json([
+            'code'  => 0,
+            'msg'   => '文件保存成功'
+        ]);
+    }
+
+    // 重启nginx服务状态
+    public function reload()
+    {
+        exec("D: & cd /phpStudy/nginx & nginx -s reload", $out);
+        return json([
+            'code'  => 0,
+            'msg'   => '重启成功'
+        ]);
     }
 }
