@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: http://1se01.com/sitemap.xml

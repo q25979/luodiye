@@ -8,7 +8,7 @@ use think\Db;
 class System extends Validate
 {
     // 配置文件路径
-    private $confpath = 'D:\phpStudy\nginx\conf\vhosts.conf';
+    private $confpath = '/usr/local/nginx/conf/vhost/link.conf';
 
 	// 数据库备份
     public function dbbackup()
@@ -22,9 +22,9 @@ class System extends Validate
         // 设置颜色
         echo "<style>body{color:#32CD32;}</style>";
         $dbname = \Config::get()['database']['database'];
-        $path = 'C:/backups/';
+        $path = '/backups/';
         is_dir($path) OR mkdir($path);
-        $filename = 'C:/backups/'.date('YmdHis').'.sql';
+        $filename = '/backups/'.date('YmdHis').'.sql';
         $byte = 0; // 大小
 
         echo "==> 数据库备份中, 请稍候......<br />";
@@ -111,7 +111,7 @@ class System extends Validate
     // 重启nginx服务状态
     public function reload()
     {
-        exec("D: & cd /phpStudy/nginx & nginx -s reload", $out);
+        exec("service nginx restart", $out);
         return json([
             'code'  => 0,
             'msg'   => '重启成功'
