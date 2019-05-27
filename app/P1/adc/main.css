@@ -1,0 +1,4 @@
+﻿.zhou1{width:160px;border:1px solid #333;position:fixed;right:0px;top:20%;overflow:hidden; background:#FFF; z-index: 9999;}
+.zhou1 img{display:block;width:140px;height:140px;margin:20px auto;}
+.zhou1 p{display:block;margin:30px 0;color:#333;font-size:16px;line-height:28px;text-align:center;}
+.zhou1 p .vsd_w{ background:#F00; padding:1px 10px; color: #FFF}

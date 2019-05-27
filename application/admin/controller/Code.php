@@ -18,8 +18,9 @@ class Code extends Controller
     {
     	header('Access-Control-Allow-Origin: *');
         $type = Request::get('type');
+        $map  = ['type' => $type];
         $list = \app\common\model\Data::field('wx_number, wx_code')
-            ->where('type='.$type)
+            ->where($map)
             ->field('wx_number, wx_code')
             ->all();
 

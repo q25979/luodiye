@@ -1,0 +1,502 @@
+body {
+    background-color: #131313;
+    font-family: "Microsoft YaHei", "PingFang SC Regular", sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        padding: 0;
+    }
+
+    .target-container, .case-container, .step-container, .requirement-container, .wechat-qr-container {
+        padding: 0 15px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display: none;
+}
+
+h2.shown {
+    font-size: 2.8rem;
+    letter-spacing: 0.2rem;
+    position: relative;
+
+    display: block;
+    color: #DAA520;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+    font-weight: 600;
+
+    text-align: center;
+}
+
+h2.shown .cover {
+    width: 100%;
+    height: calc(100% - 110px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,#131313 0%,transparent 50%,#131313);
+    opacity: 0.6;
+}
+
+h2.shown::after {
+    display: block;
+    content: "";
+    height: 200px;
+    margin-top: -80px;
+
+    background: url(../img/spark.png) no-repeat;
+    background-size: contain;
+}
+
+/* header */
+.header-container img {
+    width: 100%;
+}
+
+/* target */
+
+.target-container {
+    margin-bottom: 40px;
+}
+
+.target-container .target-floating-container {
+    width: 840px;
+    margin: 40px 60px;
+}
+
+.target-container .target {
+    width: 380px;
+    float: left;
+    position: relative;
+    padding: 10px;
+}
+
+.target-container .target-divider {
+    float: left;
+    margin: 20px 30px;
+}
+
+.target-container .target-divider img {
+    height: 120px;
+}
+
+
+.target-container .target::after {
+    display: block;
+    content: "";
+    height: 80px;
+
+    background: url(../img/spark.png) no-repeat;
+    background-size: cover;
+}
+
+.target-container .target h3 {
+    color: #FFF;
+    display: block;
+    position: absolute;
+    left: 160px;
+    top: 20px;
+    font-size: 1.4rem;
+}
+
+.target-container .target p {
+    color: #FFF;
+    display: block;
+    position: absolute;
+    left: 160px;
+    top: 60px;
+    letter-spacing: 1px;
+
+}
+
+.target-container .target  img {
+    border-radius: 50%;
+    width: 120px;
+    border: 5px solid rgb(247, 178, 5);
+    filter:drop-shadow(5px 5px 10px black)
+}
+
+@media screen and (max-width: 960px) {
+    .target-container .target-floating-container {
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .target-container .target {
+        width: 100%;
+        position: relative;
+        padding: 10px;
+        float: none;
+    }
+
+    .target-container .target-divider {
+        display: none;
+    }
+}
+
+/* case */
+
+.case-container .case {
+    width: 200px;
+    margin: 15px;
+    margin-top: -40px;
+    float: left;
+    position: relative;
+}
+
+.case-container .case:not(.last)::after {
+
+    position: absolute;
+    content: "";
+    display: block;
+
+    top: 320px;
+    left: 0px;
+
+    margin-top: 20px;
+    margin-left: -40px;
+
+    width: 500px;
+    height: 4px;
+
+    transform: rotate(90deg);
+
+    background: linear-gradient(to right,#131313 0%,#B8860B 50%,#131313);
+    border-radius: 90%;
+}
+
+.case-container .case img {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    border: 3px solid #333;
+}
+
+.case-container .case h3 {
+    display: block;
+    color: #FFF;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.case-container .case p {
+    color: #FFF;
+    line-height: 2;
+    font-size: 0.9rem;
+}
+
+
+@media screen and (max-width: 960px) {
+    .case-container .case {
+        width: 100%;
+        margin: 0px;
+        float: none;
+    }
+
+    .case-container .case img {
+        width: 90%;
+        display: block;
+        margin: 1rem auto;
+    }
+
+    .case-container .case:not(.last)::after {
+        display: none;
+    }
+}
+
+
+/* counter */
+.counter-container{
+	position: relative;
+	border: 4px solid transparent;
+    border-radius: 10px;
+    background: #131313;
+    background-clip: padding-box;
+    padding: 60px;
+    margin: 60px 40px;
+    height: 240px;
+}
+
+.counter-container::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	bottom: -2px;
+	left: -2px;
+	border-radius: 10px;
+	background: linear-gradient(120deg, #333,#131313 90%);
+	z-index: -1;
+}
+
+.counter-container h2, .counter-container .number {
+    font-size: 2.8rem;
+    letter-spacing: 0.2rem;
+    position: relative;
+
+    display: block;
+    color: #DAA520;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+    font-weight: 600;
+}
+
+.counter-container h2 small {
+    font-size: 1rem;
+}
+
+.counter-container h2 .cover, .counter-container .number .cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,#131313 0%,transparent 50%,#131313);
+    opacity: 0.6;
+}
+
+.counter-container .number {
+    color: rgb(255, 221, 136);
+    position: absolute;
+    top: 50px;
+    left: 230px;
+}
+
+.counter-container .scrolling-list {
+    height: 110px;
+    width: 100%;
+    overflow: auto;
+}
+
+.counter-container .info {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #FFF;
+}
+
+/* step */
+
+.step-container {
+    background: url(../img/step-background.jpg) no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    padding-bottom: 100px;
+    margin-top: 60px;
+}
+
+.step-container img
+{
+    height: 400px;
+    margin-left: 20px;
+}
+
+.step-container ul {
+    position: absolute;
+    left: 360px;
+    top: 240px;
+
+    color: #FFF;
+    list-style: none;
+}
+
+.step-container ul li {
+    margin: 20px 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.step-container ul li::after {
+    content: "";
+    display: block;
+
+    margin-top: 20px;
+    margin-left: -40px;
+    width: 120%;
+
+    background: linear-gradient(to right,#131313 0%,#B8860B 50%,#131313);
+    height: 4px;
+    border-radius: 90%;
+}
+
+@media screen and (max-width: 960px) {
+    .step-container img {display: none;}
+    .step-container ul {
+        position: static;
+        margin-top: -80px;
+        top: 0;
+        left: 0;
+    }
+
+    .step-container .mobile_break {
+        display: block;
+    }
+}
+
+/* Requirements */
+
+.requirement-container {
+    padding-bottom: 50px;
+}
+
+.requirement-container .row {
+    margin-top: -80px;
+}
+
+.requirement-container .col-6 {
+    text-align: right;
+}
+
+.requirement-container .dash {
+    height: 320px;
+    padding-top: 90px;
+}
+
+.requirement-container .text {
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    color: #FFF;
+    line-height: 2;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 960px) {
+    .requirement-container img {
+        /* display: none; */
+    }
+
+    .requirement-container .mobile_break {
+        display: none;
+    }
+
+    .requirement-container .dash {
+        display: none;
+    }
+
+    .requirement-container .col-xs-12 {
+        margin-top: -40px;
+        text-align: center;
+    }
+}
+/* desc */
+.desc-container ul {
+    display: block;
+    margin-top: -40px;
+    font-size: 1.4rem;
+    line-height: 2;
+    color: #FFF;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+
+@media screen and (max-width: 960px) {
+    .desc-container ul {
+        margin-top: -80px;
+    }
+}
+
+/* wechat qr */
+.wechat-qr-container {
+    border-top: 3px solid #FFF;
+    border-bottom: 3px solid #FFF;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 40px 40px;
+}
+
+.wechat-qr-container .wechat-qr span {
+    display: block;
+    width: 24px;
+    float: left;
+    color: #FFF;
+    margin: 0 20px;
+    font-size: 1.4rem;
+}
+
+.wechat-qr-container .wechat-qr img {
+    width: 160px;
+    display: block;
+    background: #FFF;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+}
+
+.wechat-qr-container .description {
+    margin-top: 30px;
+    border-left: 2px solid #ccc;
+    padding-left: 40px;
+    display: block;
+    color: #FFF;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+.wechat-qr-container .wechat {
+    display: inline-block;
+    padding: 0 10px;
+    background: #FFF;
+    border-radius: 10px;
+    color: #131313;
+    cursor: pointer;
+}
+
+.wechat-qr-container .wechat:hover {
+    background: #FFD700;
+}
+
+@media screen and (max-width: 960px) {
+    .wechat-qr-container .mobile_break {
+        display: none;
+    }
+
+    .wechat-qr-container .description {
+        border-left: 0;
+        padding-left: 0;
+    }
+
+}
+
+.float-qr {
+    position: fixed;
+    top: 40%;
+    right: 10px;
+}
+
+.float-qr .wechat-qr span {
+    display: block;
+    width: 24px;
+    float: left;
+    color: #FFF;
+    margin: 10px 0px;
+    font-size: 13px;
+}
+
+.float-qr .wechat-qr img {
+    width: 120px;
+    height: 120px;
+    display: block;
+    background: #FFF;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+}
+
+
+.coop-container img {
+    width: 80%;
+    display: block;
+    margin: 3rem auto;
+}

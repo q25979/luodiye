@@ -1,20 +1,3 @@
-域名管理：http://www.my8w.com/index.asp
-  账号：wolunyun.com
-  密码：gx360360
-
-落地页：
-  服务器：103.60.166.36:58888
-  账号：Administrator
-  密码：WSLqwc448
-
-二级域名：
-  hugsel.wolunyun.com 
-  butths.wolunyun.com
-  newf.wolunyun.com
-  plan.wolunyun.com
-  make.wolunyun.com
-
-后台管理：
-  地址：wolunyun.com/admin
-  账号：luoadmin
-  密码：Aa123123
+默认账号密码
+luodiye
+Aa123123

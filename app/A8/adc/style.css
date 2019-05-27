@@ -1,0 +1,305 @@
+﻿/* CSS Document */
+        body {
+            font-family: Microsoft Yahei, tahoma, arial, simsun;
+            font-size: 16px;
+            background: #fff;
+            color: #252525;
+            height: 100%;
+        }
+
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        ul,
+        li,
+        h5 {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a,
+        a:visited {
+            color: #999;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+            vertical-align: middle;
+            max-width: 100%;
+        }
+
+        #wx_icon {
+            position: fixed;
+            right: 3%;
+            z-index: 99;
+            background: url("../images/wx_icon.gif") no-repeat;
+            top: 45%;
+            width: 88px;
+            height: 99px;
+            background-size: 88px;
+        }
+
+        #wx_copy {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, .7);
+        }
+
+        .wx_note {
+            width: 84%;
+            position: fixed;
+            z-index: 999;
+            top: 30%;
+            left: 8%;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        .wx_note p {
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .wx_note p.wx1 {
+            font-size: 28px;
+            color: #666;
+        }
+
+        .wx_note p.wx2 {
+            background: #b40000;
+            font-size: 32px;
+            color: #fff;
+            height: 60px;
+            line-height: 60px;
+        }
+
+        .wx_note p a,
+        .wx_note p a:visited {
+            font-size: 20px;
+            color: #06f;
+            margin-left: 8px;
+        }
+
+        #close_wx {
+            position: absolute;
+            right: -18px;
+            top: -18px;
+            width: 36px;
+            height: 36px;
+            background: url("../images/close.png") no-repeat;
+            background-size: 36px;
+        }
+
+        header,
+        nav,
+        article,
+        section,
+        footer {
+            width: 670px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 36px 0 15px;
+            line-height: 130%;
+            font-weight: normal;
+            border-bottom: 1px solid #e7e7eb;
+            padding-bottom: 16px;
+        }
+
+        nav {
+            color: #8c8c8c;
+        }
+
+        nav span {
+            color: #607fa6;
+            margin-left: 12px;
+        }
+
+        article {
+            line-height: 170%;
+        }
+
+        article p {
+            margin-top: 20px;
+        }
+
+        article p span,
+        article p strong,
+        section li p strong {
+            color: #ff2941;
+        }
+
+        article h5 {
+            margin: 20px auto;
+        }
+
+        article h5 span {
+            color: #607fa6;
+            margin-right: 10px;
+        }
+
+        article h5 small {
+            font-size: 16px;
+            margin-left: 12px;
+            background: url("../images/zan_4.png") no-repeat;
+            background-size: 18px;
+            padding-left: 19px;
+        }
+
+        section h2,
+        article h5 {
+            font-size: 16px;
+            color: #8c8c8c;
+            font-weight: normal;
+        }
+
+        section h2 {
+            border-top: 1px dotted #8c8c8c;
+            padding: 26px 0 8px;
+            text-align: center;
+        }
+
+        section li {
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        section li h3 {
+            float: left;
+            width: 35px;
+        }
+
+        section li h3 img {
+            width: 35px;
+        }
+
+        section li p {
+            margin-left: 45px;
+            line-height: 160%;
+        }
+
+        section li p span {
+            display: block;
+            color: #999;
+        }
+
+        section li p img {
+            margin-bottom: 8px;
+        }
+
+        section li p small {
+            display: block;
+            color: #999;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            line-height: 100%;
+            color: #999;
+            background: #f0f0f0;
+            padding: 3px 0;
+        }
+
+        @media (max-width:767px) {
+            #wx_icon {
+                width: 56px;
+                height: 63px;
+                background-size: 56px;
+            }
+            header,
+            nav,
+            article,
+            section,
+            footer {
+                width: 90%;
+                padding: 0 5%;
+            }
+            header h1 {
+                margin-top: 20px;
+                border: none;
+                padding: 0;
+            }
+            footer {
+                padding: 3px 0 2px;
+            }
+        }
+        .tu4
+        {
+            position: relative;
+        }
+        .wechat
+        {
+            /* position:absolute;
+            left: 0;
+            bottom:0.5%; */
+            font-size:21px; 
+            background-color: yellow;
+            color: black;
+            line-height: 1;
+            
+        }
+        .wechat button {
+            width: 100%;
+            border: 1px solid rgba(180, 176, 176, 0.7);
+            border-top: none;
+            font-size:18px;
+        }
+        @keyframes wechat_wx{
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        .wechat_wx{
+            color:red;
+            font-size:20px;
+            animation: wechat_wx 0.8s linear infinite;
+        }
+        article p span, article p strong, section li p strong {
+            color: black;
+        }
+        .dianji
+        {
+            /* position:absolute;
+            right: 0;
+            bottom: 0%;
+            font-size: 21px;
+            background: chartreuse; 
+            line-height: 1;
+            color: black; */
+        	text-align:center;
+          	margin:0;
+        }
+        .layui-layer-setwin {
+            top: 0!important;
+            right: 0!important;
+        }
+        .layui-layer-ico.layui-layer-close.layui-layer-close1 {
+            padding: 12px;
+            background-position: 12px -58px;
+            background-size: 360px;
+        }
+        .copy_btn {
+            border: none;
+            background: none;
+            font-size: inherit;
+          padding:0px;
+        }
+

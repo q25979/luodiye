@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333;
+	background: #ffe29c url("../adc/topbg.png") no-repeat top center;;
+}
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+em,
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+select,
+checkbox,
+textarea,
+span,
+input,
+button,
+img {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	border: 0;
+	outline: none;
+}
+dl,
+dt,
+dd{
+	font-weight: normal;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: #3c495a;
+}
+a:hover {
+	text-decoration: none;
+}
+.blue{
+	color: #55a8fd;
+}
+.grey{
+	color: #c0c4cb;
+}
+.orange{
+	color: #ff8813;
+}
+.red{
+	color: #ff0000;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mt15{
+	margin-top: 15px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.mt30{
+	margin-top: 30px;
+}
+.mt40{
+	margin-top: 40px;
+}
+.mt50{
+	margin-top: 50px;
+}
+.mt100{
+	margin-top: 100px;
+}
+.mb10{
+	margin-bottom: 10px;
+}
+.mb15{
+	margin-bottom: 15px;
+}
+.mb20{
+	margin-bottom: 20px;
+}
+.mb25{
+	margin-bottom: 25px;
+}
+.mb40{
+	margin-bottom: 40px;
+}
+.mr20{
+	margin-right: 20px;
+}
+.mr30{
+	margin-right: 30px;
+}
+.mr50{
+	margin-right: 30px;
+}
+.mr80{
+	margin-right: 80px;
+}
+.ml20{
+	margin-left: 20px;
+}
+.ml50{
+	margin-left: 50px;
+}
+.ml120{
+	margin-left: 120px;
+}
+.h40{
+	height: 40px;
+}
+.w45{
+	width:45px;
+}
+.w120{
+	width:140px;
+}
+.w518{
+	width: 518px;
+}
+.w240{
+	width: 240px;
+}
+.w140{
+	width: 140px;
+}
+.w640{
+	width: 640px;
+}
+img
+{
+	vertical-align:top;   /*解决IMG留白的bug，而且保留原来的行内块属性*/
+	border:none;
+}
+li
+{
+	list-style:none;
+}
+.clearfix:after  /*清除浮动*/
+{
+	display:block;
+	clear:both;
+	content:'';
+}
+.clearfix
+{
+	zoom:1;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+
+.zhou1{width:160px;border:1px solid #333;position:fixed;right:30px;top:30%;overflow:hidden; background:#FFF}
+.zhou1 img{display:block;width:140px;height:140px;margin:20px auto;}
+.zhou1 p{display:block;margin:30px 0;color:#333;font-size:16px;line-height:28px;text-align:center;}
+.zhou1 p .vsd_w{ background:#F00; padding:1px 10px; color: #FFF}

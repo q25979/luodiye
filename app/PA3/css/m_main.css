@@ -1,0 +1,189 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.banner{
+    width: 100%;
+    font-size: 0;
+}
+.banner img{
+    width: 100%;
+}
+
+.cont{
+    width: 100%;
+    text-align: center;
+    color: #ab7c1c;
+    float: left;
+    text-shadow: 0 1px 1px #fff;
+}
+.cont h1{
+    font-size: 2rem;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.cont h2{
+    font-size: 1rem;
+    font-weight: 100;
+    margin-top: 0;
+}
+.span{
+    display: inline-block;
+    width:3.5rem;
+    height:1rem ;
+    margin-bottom: 0.2rem;
+}
+.title_left{
+    background: url(../img/title_left.png) no-repeat;
+    background-size: cover;
+}
+.title_right{
+    background: url(../img/tltle_right.png) no-repeat;
+    background-size: cover;
+}
+
+.cont .box{
+    background:#fcf5e5 ;
+    padding: 5%;
+    margin:1% 5%;
+    border-radius: 1rem;
+    width: 90%;
+    box-sizing:border-box;
+    float: left;
+    overflow: hidden;
+    
+}
+.cont .box img{
+    border-radius: 10rem;
+    width: 50%;
+    box-shadow: 0 3px 1px #fcf2dd;
+    border: 3px solid #cfaf6d;
+}
+.cont .box p{
+    text-align: left;
+}
+.ads{
+    width: 100%;
+}
+
+.b .box{
+    background:url("https://www.transparenttextures.com/patterns/arches.png") rgb(246, 229, 193);
+}
+.min_box_3{
+    box-sizing:border-box;
+    width: 46%;
+    float: left;
+    margin: 2%;
+}
+.min_box_3 img{
+    width: 60%;
+}
+#wx_pic{
+    width: 50%;
+    height: 50%;
+    display:inline-block;
+    margin: 0 auto;
+}
+#wx_btn{
+    width: 80%;
+    height: 2em;
+    margin: 1em auto;
+    display: block;
+    border: none;
+    font-size:1.3em;
+    color: #fff;
+    background: #b73333;
+    padding: 0.3em;
+    border-radius: 50px;
+    line-height: 1.2em;
+}
+#wx_btn:hover{
+    background: #d44040;
+}
+.inp{
+    opacity: 0;
+    display: block;
+    width: 1px;
+    height: 1px;
+    margin: 0 auto;
+}
+
+.footer{
+    text-align: center;
+    color: #ab7c1c;
+    font-size: 1rem;
+}
+.copy_img{
+    width: 100%;
+    margin: 1rem auto;
+}
+.copy_img img{
+    width: 19%;
+}
+
+#menu {
+    width: 100%;
+    overflow: hidden;
+    margin: 1rem auto;
+}
+
+#menu #nav {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#menu #nav li {
+    float: left;
+    width: 25%;
+    font-weight: bolder;
+}
+
+#menu #nav li a {
+    display: block;
+    line-height: 2rem;
+    text-decoration: none;
+    padding: 0 0 0 2%;
+    text-align: center;
+    color: #ab7c1c;
+}
+
+#menu_con {
+    width: 100%;
+    border-top: none;
+    text-align: center;
+}
+#menu_con p {
+    text-align: left;
+}
+
+#menu_con img {
+    width: 50%;
+    border-radius: 20rem;
+}
+
+.tag {
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.selected {
+    background: #EFD9B9;
+    color: #fff;
+}
+p button{background: red;color: white;padding: 0 0.5rem;border: none;font-size: 1rem; border-radius: 1rem; }
+
+/* 中小型笔记本或大平板 laptop */
+@media all and (min-width: 980px) and (max-width: 1200px) {
+
+}
+/* 中型平板或小型笔记本 tablet */
+@media all and (min-width: 768px) and (max-width: 979px) {
+
+}
+/* 手机或小平板 phone */
+@media all and (max-width: 600px) {
+
+}
