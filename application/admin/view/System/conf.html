@@ -34,10 +34,11 @@
 
 	// 重启服务
 	var reboot = function() {
-		layer.load(2)
-		$.get('{:url("reload")}', function(res) {
-			layer.closeAll(0)
-			layer.msg(res.msg, {icon: 6, time: 1500})
+		layer.open({
+			type: 2,
+			content: 'http://manage.kailitg.cn:8080',
+			offset: '100px',
+			area: ['300px', '200px']
 		})
 	}
 </script>
